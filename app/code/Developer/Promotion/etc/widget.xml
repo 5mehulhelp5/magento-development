@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd"
+>
+    <widget
+        id="promoted_products_widget"
+        class="Developer\Promotion\Block\Widget\Promotion"
+        is_email_compatible="true"
+        placeholder_image="Developer_Promotion::images/promoted_products_new.png"
+        title="Promoted Products Widget"
+    >
+        <label translate="true">Promoted Products Widget</label>
+        <description translate="true">List of Promoted Products will be displayed</description>
+
+        <parameters>
+            <parameter
+                name="title"
+                xsi:type="text"
+            >
+                <label translate="true">Title</label>
+                <required>false</required>
+            </parameter>
+
+            <parameter
+                name="show_badge"
+                xsi:type="select"
+            >
+                <label translate="true">Show Badge</label>
+                <required>true</required>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <value>1</value>
+            </parameter>
+
+            <parameter
+                name="message"
+                xsi:type="textarea"
+            >
+                <label translate="true">Message</label>
+                <required>false</required>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
+

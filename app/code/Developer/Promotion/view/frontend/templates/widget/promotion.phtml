@@ -1,0 +1,15 @@
+<?php /** @var $block Developer\Promotion\Block\Widget\Promotion */ ?>
+
+<div class="promotion-widget">
+    <?php if ($block->getTitle()): ?>
+        <h3 class="promotion-title"><?= $block->escapeHtml($block->getTitle()) ?></h3>
+    <?php endif; ?>
+
+    <?php if ($block->isBadgeVisible()): ?>
+        <span class="promotion-badge">Promo</span>
+    <?php endif; ?>
+
+    <?php if ($block->getMessage()): ?>
+        <div class="promotion-message"><?= $block->escapeHtml($block->getMessage()) ?></div>
+    <?php endif; ?>
+</div>

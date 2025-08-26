@@ -7,6 +7,7 @@
 namespace Developer\Promotion\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Product;
+use Magento\Eav\Model\Entity\Attribute\Source\Boolean;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
@@ -60,6 +61,7 @@ class AddPromotionAttribute
                     'input' => 'boolean',
                     'required' => false,
                     'sort_order' => 50,
+                    'source' => Boolean::class,
                     'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                     'is_used_in_grid' => false,
                     'is_visible_in_grid' => false,
