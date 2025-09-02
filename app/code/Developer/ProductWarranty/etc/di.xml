@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Developer\ProductWarranty\Api\WarrantyRepositoryInterface" type="Developer\ProductWarranty\Model\WarrantyRepository" />
+    <preference for="Developer\ProductWarranty\Api\Warranty\WarrantyInterface" type="Developer\ProductWarranty\Model\Warranty" />
+
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="adding_warranty" type="Developer\ProductWarranty\Plugin\WarrantyPlugin" sortOrder="1" disabled="false" />
+    </type>
+</config>

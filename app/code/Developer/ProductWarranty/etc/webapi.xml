@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<routes xmlns="$LOCAL_SCHEMA$">
+    <route url="/V1/warranty/:productId" method="GET">
+        <service class="Developer\ProductWarranty\Api\WarrantyRepositoryInterface" method="getByProductId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/warranty/:productId" method="DELETE">
+        <service class="Developer\ProductWarranty\Api\WarrantyRepositoryInterface" method="deleteByProductId"/>
+        <resources>
+            <resource ref="Magento_Catalog::products"/>
+        </resources>
+    </route>
+
+    <route url="/V1/warranty" method="POST">
+        <service class="Developer\ProductWarranty\Api\WarrantyRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/warranty" method="PUT">
+        <service class="Developer\ProductWarranty\Api\WarrantyRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+</routes>
