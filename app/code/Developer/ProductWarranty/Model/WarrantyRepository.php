@@ -8,7 +8,7 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use \Developer\ProductWarranty\Model\ResourceModel\Warranty as WarrantyResource;
+use Developer\ProductWarranty\Model\ResourceModel\Warranty as WarrantyResource;
 class WarrantyRepository implements WarrantyRepositoryInterface
 {
     private WarrantyResource $resourceModel;
@@ -28,7 +28,7 @@ class WarrantyRepository implements WarrantyRepositoryInterface
     public function save(WarrantyInterface $warranty): WarrantyInterface
     {
         try {
-            $warranty->getId()
+            $warranty->getId();
             $this->resourceModel->save($warranty);
         } catch (\Exception $e) {
             throw new CouldNotSaveException(__($e->getMessage()));
@@ -74,5 +74,7 @@ class WarrantyRepository implements WarrantyRepositoryInterface
         } catch (\Exception $e) {
             throw new CouldNotDeleteException(__($e->getMessage()));
         }
+
+        return true;
     }
 }
