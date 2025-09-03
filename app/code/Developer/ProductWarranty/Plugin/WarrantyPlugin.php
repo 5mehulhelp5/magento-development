@@ -32,5 +32,4 @@ class WarrantyPlugin
         }
         return $searchResults;
     }
-
 }

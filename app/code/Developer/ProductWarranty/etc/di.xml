@@ -8,4 +8,8 @@
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
         <plugin name="adding_warranty" type="Developer\ProductWarranty\Plugin\WarrantyPlugin" sortOrder="1" disabled="false" />
     </type>
+
+    <type name="Developer\ProductWarranty\Api\WarrantyRepositoryInterface">
+        <plugin name="logging_warranty" type="Developer\ProductWarranty\Plugin\LoggerPlugin" sortOrder="2" disabled="false" />
+    </type>
 </config>
